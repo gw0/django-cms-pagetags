@@ -25,7 +25,7 @@ In your ``settings.py`` add::
 In your ``urls.py`` add::
 
     urlpatterns += patterns('',
-        url(r'^admin/tagging/autocomplete', include('pagetags.urls')),
+        url(r'^autocomplete/', include('pagetags.urls')),
         ...
     )
 

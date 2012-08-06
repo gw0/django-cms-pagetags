@@ -11,7 +11,7 @@ from tagging.models import Tag
 import json
 
 
-def list_tags(request):
+def autocomplete_ajax(request):
     q = request.GET.get('q')
     tags = []
     if q:
@@ -20,3 +20,6 @@ def list_tags(request):
                 .values_list('name', flat=True))
     response = [ {'id':tag, 'label':tag, 'value':tag}  for tag in tags ]
     return HttpResponse(json.dumps(response), mimetype='application/json')
+
+list_tags = autocomplete_ajax  # backwards compatibility
+

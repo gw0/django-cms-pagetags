@@ -8,5 +8,5 @@ from pagetags import views
 
 
 urlpatterns = patterns('',
-    url(r'^$', views.list_tags),
+    url(r'^$', views.autocomplete_ajax),
 )

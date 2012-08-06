@@ -18,7 +18,7 @@ class AutocompleteWidget(widgets.TextInput):
                 .get('attrs', {})
                 .get('id', random.sample(string.letters, 15)))
         html = super(AutocompleteWidget, self).render(*args, **kwargs)
-        url = reverse('pagetags.views.list_tags')
+        url = reverse('pagetags.views.autocomplete_ajax')
         js = '<script type="text/javascript">autocomplete("%s", "%s")</script>'
         js %= (id, url)
         return mark_safe(html + js)
