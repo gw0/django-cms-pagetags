@@ -1,0 +1,2 @@
+{% load tagging_tags %}{% tags_for_object current_page.pagetagging as tag_list %}
+{% for tag in tag_list %}<span class="tags"><a href="{% url pagetags.views.page_list tag=tag.name %}" rel="tag">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
