@@ -9,4 +9,5 @@ from pagetags import views
 
 urlpatterns = patterns('',
     url(r'^$', views.autocomplete_ajax),
+    url(r'^(?P<tag>[^/]+)/$', views.page_list),
 )

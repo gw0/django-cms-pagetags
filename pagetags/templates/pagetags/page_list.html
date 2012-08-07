@@ -1,0 +1,6 @@
+{% load cms_tags page_tags %}{% pages_with_tags tag order alphabetical as page_list %}
+{% if page_list %}
+<ul>{% for page in page_list %}
+	<li><a href="{% page_url page %}">{{ page }}</li>
+{% endfor %}</ul>
+{% endif %}
